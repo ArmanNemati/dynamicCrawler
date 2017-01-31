@@ -1,0 +1,10 @@
+C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\bin\Debug\CrawlerLibrary.dll
+C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\bin\Debug\CrawlerLibrary.pdb
+C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\obj\Debug\CrawlerLibrary.dll
+C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\obj\Debug\CrawlerLibrary.pdb
+C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\obj\Debug\CrawlerLibrary.csprojResolveAssemblyReference.cache

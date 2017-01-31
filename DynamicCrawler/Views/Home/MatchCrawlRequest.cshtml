@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DynamicCrawler.Models.ViewModel.Match>
+<h3>Result Data:</h3>
+<table class="table" id="matchTable">
+    <tr>
+        <th>
+            League
+        </th>
+        <th>
+            Team A
+        </th>
+        <th>
+            Time
+        </th>
+        <th>
+            Team B
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.League)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.TeamOne)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.TeamTwo)
+            </td>
+        </tr>
+    }
+
+</table>
+<script>
+    $(document).ready(function () {
+        $("#matchTable").kendoGrid({
+            height: 520,
+            sortable: true,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 6
+            },
+            dataSource: {
+                pageSize: 12
+            }
+        });
+    });
+</script>

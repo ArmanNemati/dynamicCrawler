@@ -1,0 +1,312 @@
+﻿@using CrawlerLibrary.Models
+@model DynamicCrawler.Models.Mapping
+@Html.Kendo().Button().Name("btnCreateUrl").Content("Add Url").HtmlAttributes(new { type = "button" }).Events(e => e.Click("btnCreateUrlOnClick")).Deferred()
+@Html.Kendo().Button().Name("btnCreateProperty").Content("Add Property").HtmlAttributes(new { type = "button" }).Events(e => e.Click("btnCreatePropertyOnClick")).Deferred()
+@Html.Kendo().Button().Name("btnTestCrawl").Content("Test").HtmlAttributes(new { type = "button" }).Events(e => e.Click("btnTestCrawlOnClick")).Deferred()
+<br />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Key)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Key)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstSelector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstSelector)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondSelector)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondSelector)
+        </dd>
+    </dl>
+</div>
+<div>
+    <div class="col-md-6">
+        @if (Model.Properties != null && Model.Properties.Count > 0)
+        {
+            <h4>Properties:</h4>
+            <table class="table" id="propsTable">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Selector
+                    </th>
+                    <th>Operations</th>
+                </tr>
+                @foreach (var item in Model.Properties)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Selector)
+                        </td>
+                        <td>
+                            @Html.Kendo().Button().Name("btnEditProp" + item.Id).Content("Edit").HtmlAttributes(new { type = "button", param = item.Id }).Events(e => e.Click("btnEditPropOnClick")).Deferred()
+                            @Html.Kendo().Button().Name("btnDeleteProp" + item.Id).Content("Delete").HtmlAttributes(new { type = "button", param = item.Id }).Events(e => e.Click("btnDeletePropOnClick")).Deferred()
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+    <div class="col-md-5">
+        @if (Model.Urls != null && Model.Urls.Count > 0)
+        {
+            <h4>Urls:</h4>
+            <table class="table" id="Urlstable">
+                <tr>
+                    <th>
+                        Comments
+                    </th>
+                    <th>
+                        Link
+                    </th>
+                    <th>Operations</th>
+                </tr>
+                @foreach (var item in Model.Urls)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Comments)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Link)
+                        </td>
+                        <td>
+                            @Html.Kendo().Button().Name("btnEditUrl" + item.Id).Content("Edit").HtmlAttributes(new { type = "button", param = item.Id }).Events(e => e.Click("btnEditUrlOnClick")).Deferred()
+                            @Html.Kendo().Button().Name("btnDeleteUrl" + item.Id).Content("Delete").HtmlAttributes(new { type = "button", param = item.Id }).Events(e => e.Click("btnDeleteUrlOnClick")).Deferred()
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+
+</div>
+<div id="addUrlWindow"></div>
+<div id="addEntityWindow"></div>
+<div id="editUrlWindow"></div>
+<div id="addPropertyWindow"></div>
+<div id="editPropWindow"></div>
+<div id="testCrawlWindow">
+    <div id="gridTestCrawl"></div>
+</div>
+<script>
+    $(document).ready(function () {
+        @Html.Kendo().DeferredScripts(false);
+
+        $("#Urlstable").kendoGrid({
+            height: 520,
+            sortable: true,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 6
+            },
+            dataSource: {
+                pageSize: 12
+            }
+        });
+
+        $("#propsTable").kendoGrid({
+            height: 520,
+            sortable: true,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 6
+            },
+            dataSource: {
+                pageSize: 12
+            }
+        });
+    });
+
+    function btnCreateUrlOnClick() {
+        var addUrlWindow = $("#addUrlWindow");
+        addUrlWindow.kendoWindow({
+            width: "600px",
+            title: "Add Url",
+            visible: false,
+            content: "/Url/Create/"+@Model.Id.ToString(),
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ]
+            //close: onClose
+        }).data("kendoWindow").center().open();
+    }
+
+    function btnEditUrlOnClick() {
+        var urlCode=this.element.attr("param");
+        var editWindow = $("#editUrlWindow");
+        editWindow.kendoWindow({
+            width: "600px",
+            title: "Edit Mapping",
+            visible: false,
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            content: "/Url/Edit/" + urlCode,
+            close: onClose
+        }).data("kendoWindow").center().open();
+    }
+
+    function btnDeleteUrlOnClick() {
+        var urlCode = this.element.attr("param");
+        var editWindow = $("#editUrlWindow");
+        editWindow.kendoWindow({
+            width: "600px",
+            title: "Delete Mapping",
+            visible: false,
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            content: "/Url/Delete/" + urlCode,
+            close: onClose
+        }).data("kendoWindow").center().open();
+    }
+
+    function onClose() {
+        $("#window").innerHTML = "";
+    }
+
+    function btnCreatePropertyOnClick() {
+        var addPropertyWindow = $("#addPropertyWindow");
+        addPropertyWindow.kendoWindow({
+            width: "600px",
+            title: "Add Property",
+            visible: false,
+            content: "/Property/Create?mappingCode="+@Model.Id.ToString(),
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ]
+            //close: onClose
+        }).data("kendoWindow").center().open();
+    }
+
+    function btnEditPropOnClick() {
+        var propCode=this.element.attr("param");
+        var window = $("#editPropWindow");
+        window.kendoWindow({
+            width: "600px",
+            title: "Delete Property",
+            visible: false,
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            content: "/Property/Edit/" + propCode,
+            close: onClose
+        }).data("kendoWindow").center().open();
+    }
+
+    function btnDeletePropOnClick() {
+        var propCode=this.element.attr("param");
+        var window = $("#editPropWindow");
+        window.kendoWindow({
+            width: "600px",
+            title: "Delete Property",
+            visible: false,
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            content: "/Property/Delete/" + propCode,
+            close: onClose
+        }).data("kendoWindow").center().open();
+    }
+
+    function btnTestCrawlOnClick() {
+        var window = $("#testCrawlWindow");
+
+        //get grid
+        var dataSource = new kendo.data.DataSource({
+            transport: {
+                read: {
+                    url: "/Crawler/Crawl?mappingCode=" + @Model.Id,
+                    dataType: "json"
+                }
+            },
+            pageSize: 5
+        });
+        $("#gridTestCrawl")
+            .kendoGrid({
+                dataSource: dataSource,
+                pageable: true,
+                columns: [
+                    {field: "Reference"},
+                    {field: "Property.Name",title:"Property"},
+                    {field: "Value"}
+                ]
+            });
+
+        window.kendoWindow({
+            width: "600px",
+            title: "Crawl Result",
+            visible: false,
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            //content:  'arman',
+            close: onClose
+        }).data("kendoWindow").center().open();
+    }
+
+    function reloadDetails() {debugger
+        var mappingCode = @Model.Id;
+        var editWindow = $("#windowDetails");
+        editWindow.kendoWindow({
+            width: "1200",
+            height: "760px",
+            title: "Mapping Details",
+            visible: false,
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            content: "/Mapping/Details/" + mappingCode,
+            close: onClose
+        }).data("kendoWindow").center().open();
+    }
+</script>

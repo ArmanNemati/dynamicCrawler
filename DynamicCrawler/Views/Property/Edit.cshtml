@@ -1,0 +1,83 @@
+﻿@model DynamicCrawler.Models.Property
+
+@using (Html.BeginForm("Edit", "Property", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-7">
+                @Html.Kendo().TextBoxFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Selector, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-7">
+                @Html.Kendo().TextBoxFor(model => model.Selector)
+                @Html.ValidationMessageFor(model => model.Selector, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.EntityCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input id="EntityCode1" name="EntityCode" value="@Model.EntityCode" />
+            </div>
+        </div>*@
+        @Html.Hidden("MappingCode", (int)ViewBag.MappingCode)
+
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-10">
+                <input type="button" value="Cancel" class="btn btn-default" onclick="closeCurrentModal()" />
+                <input type="button" value="Save" class="btn btn-success" onclick="saveProperty()"/>
+            </div>
+        </div>
+    </div>
+}
+<script>
+    $(document).ready(function () {
+        //$("#EntityCode1").kendoDropDownList({
+        //    dataTextField: "Name",
+        //    dataValueField: "Id",
+        //    dataSource: {
+        //        transport: {
+        //            read: {
+        //                dataType: "json",
+        //                url: "/Entity/GetAll",
+        //            }
+        //        }
+        //    }
+        //});
+    });
+
+    function saveProperty() {
+        var request = $.ajax({
+            url: "/Property/Edit",
+            type: "POST",
+            data: {
+                Id: $("#Id").val(),
+                Selector: $("#Selector").val(),
+                Name: $("#Name").val(),
+                MappingCode: $("#MappingCode").val(),
+            },
+            dataType: "json",
+            success: function (result) {
+                closeCurrentModal();
+                reloadDetails();  //in mapping=>details
+            }
+        });
+    }
+
+
+    function closeCurrentModal() {
+        var editPropWindow = $("#editPropWindow");
+        editPropWindow.data("kendoWindow").close();
+        $("#editPropWindow").remove();
+    }
+</script>

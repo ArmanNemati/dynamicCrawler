@@ -1,0 +1,154 @@
+﻿@using Kendo.Mvc.UI.Fluent
+@model IEnumerable<DynamicCrawler.Models.Mapping>
+<br/>
+<p>
+    @Html.Kendo().Button().Name("btnCreate").Content("Create New").HtmlAttributes(new { type = "button" }).Events(e => e.Click("btnCreateOnClick"))
+</p>
+<table class="table" id="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Key)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstSelector)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondSelector)
+        </th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Key)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstSelector)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondSelector)
+            </td>
+            <td>
+                @Html.Kendo().Button().Name("btnEdit"+ item.Id).Content("Edit").HtmlAttributes(new { type = "button", param = item.Id }).Events(e => e.Click("btnEditOnClick")).Deferred()
+                @Html.Kendo().Button().Name("btnDetails" + item.Id).Content("Details").HtmlAttributes(new { type = "button", param = item.Id }).Events(e => e.Click("btnDetailsOnClick")).Deferred()
+                @Html.Kendo().Button().Name("btnDelete" + item.Id).Content("Delete").HtmlAttributes(new { type = "button", param = item.Id }).Events(e => e.Click("btnDeleteOnClick")).Deferred()
+            </td>
+        </tr>
+    }
+</table>
+<div id="createWindow">
+    @Html.Action("Create")
+</div>
+<div id="windowEdit"></div>
+<div id="windowDetails"></div>
+<div id="windowDelete"></div>
+<script>
+    $(document).ready(function () {
+        @Html.Kendo().DeferredScripts(false);
+
+        $("#table").kendoGrid({
+            height: 520,
+            sortable: true,
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 6
+            },
+            dataSource: {
+                pageSize: 12
+            }
+        });
+
+        var createWindow = $("#createWindow"); 
+        createWindow.kendoWindow({
+            width: "600px",
+            title: "New Mapping",
+            visible: false,
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ]
+            //close: onClose
+        }).data("kendoWindow").center();
+
+        //$("#btnCreate").kendoButton({
+        //    click: btnCreate_onClick
+        //});  
+    });
+
+    function btnCreateOnClick() {
+        var modal = $("#createWindow").data("kendoWindow"); 
+        modal.open();
+    }
+    function btnEditOnClick() {
+        var mappingCode=this.element.attr("param");
+        var editWindow = $("#windowEdit");
+        editWindow.kendoWindow({
+            width: "600px",
+            title: "Edit Mapping",
+            visible: false,
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            content: "/Mapping/Edit/" + mappingCode,
+            close: onClose
+        }).data("kendoWindow").center().open();
+    }
+
+    function btnDetailsOnClick() {
+        var mappingCode = this.element.attr("param");
+        var editWindow = $("#windowDetails");
+        editWindow.kendoWindow({
+            width: "1200",
+            height: "760px",
+            title: "Mapping Details",
+            visible: false,
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            content: "/Mapping/Details/" + mappingCode,
+            close: onClose
+        }).data("kendoWindow").center().open();
+    }
+
+    function btnDeleteOnClick() {
+        var mappingCode = this.element.attr("param");
+        var editWindow = $("#windowDelete");
+        editWindow.kendoWindow({
+            width: "600px",
+            title: "Delete Mapping",
+            visible: false,
+            actions: [
+                //"Pin",
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            content: "/Mapping/Delete/" + mappingCode,
+            close: onClose
+        }).data("kendoWindow").center().open();
+    }
+
+    function onClose() {
+        $("#window").innerHTML = "";
+    }
+</script>
+
+
+

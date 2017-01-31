@@ -1,0 +1,9 @@
+C:\Users\Farak\Desktop\DynamicCrawler\Crawler\bin\Debug\Crawler.dll
+C:\Users\Farak\Desktop\DynamicCrawler\Crawler\bin\Debug\Crawler.pdb
+C:\Users\Farak\Desktop\DynamicCrawler\Crawler\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Farak\Desktop\DynamicCrawler\Crawler\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Farak\Desktop\DynamicCrawler\Crawler\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Farak\Desktop\DynamicCrawler\Crawler\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Farak\Desktop\DynamicCrawler\Crawler\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Farak\Desktop\DynamicCrawler\Crawler\obj\Debug\Crawler.dll
+C:\Users\Farak\Desktop\DynamicCrawler\Crawler\obj\Debug\Crawler.pdb

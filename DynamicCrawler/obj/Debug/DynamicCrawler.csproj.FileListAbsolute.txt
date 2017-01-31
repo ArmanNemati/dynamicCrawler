@@ -1,0 +1,135 @@
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\ApplicationInsights.config
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\csc.exe
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\vbc.exe
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\VBCSCompiler.exe
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\DynamicCrawler.dll.config
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\DynamicCrawler.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\DynamicCrawler.pdb
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Antlr3.Runtime.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\EntityFramework.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\EntityFramework.SqlServer.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.Web.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Newtonsoft.Json.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Net.Http.Formatting.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Helpers.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Http.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Http.WebHost.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Mvc.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Optimization.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Razor.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.Razor.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\WebGrease.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\EntityFramework.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\EntityFramework.SqlServer.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.Web.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Newtonsoft.Json.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Net.Http.Formatting.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Helpers.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Http.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Http.WebHost.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Mvc.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Optimization.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.Razor.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.Razor.xml
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\bin\Antlr3.Runtime.pdb
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\obj\Debug\DynamicCrawler.dll
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\obj\Debug\DynamicCrawler.pdb
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\obj\Debug\DynamicCrawler.Migrations.initiate.resources
+C:\Users\Farak\Documents\Visual Studio 2015\Projects\DynamicCrawler\DynamicCrawler\obj\Debug\DynamicCrawler.csproj.GenerateResource.Cache
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\obj\Debug\DynamicCrawler.csprojResolveAssemblyReference.cache
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\ApplicationInsights.config
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\csc.exe
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\vbc.exe
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\VBCSCompiler.exe
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\DynamicCrawler.dll.config
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\DynamicCrawler.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\DynamicCrawler.pdb
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Antlr3.Runtime.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\EntityFramework.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\EntityFramework.SqlServer.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\HtmlAgilityPack.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.Web.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Newtonsoft.Json.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Net.Http.Formatting.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Helpers.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Http.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Http.WebHost.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Mvc.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Optimization.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Razor.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.Razor.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\WebGrease.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\EntityFramework.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\EntityFramework.SqlServer.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\HtmlAgilityPack.pdb
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\HtmlAgilityPack.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.Web.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Newtonsoft.Json.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Net.Http.Formatting.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Helpers.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Http.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Http.WebHost.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Mvc.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Optimization.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.Razor.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\System.Web.WebPages.Razor.xml
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Antlr3.Runtime.pdb
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\obj\Debug\DynamicCrawler.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\obj\Debug\DynamicCrawler.pdb
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\CrawlerLibrary.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\CrawlerLibrary.pdb
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\bin\Kendo.Mvc.dll
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\obj\Debug\DynamicCrawler.Migrations.initiate.resources
+C:\Users\Farak\Desktop\DynamicCrawler\DynamicCrawler\obj\Debug\DynamicCrawler.csproj.GenerateResource.Cache
