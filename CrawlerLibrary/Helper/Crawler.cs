@@ -24,14 +24,19 @@ namespace CrawlerLibrary.Helper
         {
             List<RecordValueViewModel> records = new List<RecordValueViewModel>();
             HtmlDocument doc = new HtmlDocument();
-            int counter = 0;
             doc.LoadHtml(jsonResult.ToString());
             var container = doc.DocumentNode.SelectSingleNode(GetApproporiateStringForJson(map.FirstSelector));
+            if (container == null)
+                return null;
+
+            string xpath = GetApproporiateStringForJson(map.SecondSelector);
+            var entities = container.SelectNodes(xpath);
+            if (entities == null)
+                return null;
+            int counter = 0;
             while (true)
             {
-                string xpath = GetApproporiateStringForJson(map.SecondSelector);
-                var entities = container.SelectNodes(xpath);
-                if (entities == null || counter == entities.Count)
+                if (counter == entities.Count)
                     break;
                 var currentEntity = entities[counter++];
                 if (currentEntity == null)
@@ -56,15 +61,20 @@ namespace CrawlerLibrary.Helper
         private static List<RecordValueViewModel> GetReordsFromHtml(string url, MappingViewModel map)
         {
             List<RecordValueViewModel> records = new List<RecordValueViewModel>();
-            int counter = 0;
             HtmlWeb web = new HtmlWeb();
             var doc = web.Load(url);
             var container = doc.DocumentNode.SelectSingleNode(map.FirstSelector);
+            if(container==null)
+                return null;
+
+            string xpath = map.SecondSelector;
+            var entities = container.SelectNodes(xpath);
+            if (entities == null)
+                return null;
+            int counter = 0;
             while (true)
             {
-                string xpath = map.SecondSelector;
-                var entities = container.SelectNodes(xpath);
-                if (entities == null || counter == entities.Count)
+                if (counter == entities.Count)
                     break;
                 var currentEntity = entities[counter++];
                 if (currentEntity == null)

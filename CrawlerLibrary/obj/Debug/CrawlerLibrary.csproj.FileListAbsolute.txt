@@ -8,3 +8,13 @@ C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\bin\Debug\Newtonsoft.Json.x
 C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\obj\Debug\CrawlerLibrary.dll
 C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\obj\Debug\CrawlerLibrary.pdb
 C:\Users\Farak\Desktop\DynamicCrawler\CrawlerLibrary\obj\Debug\CrawlerLibrary.csprojResolveAssemblyReference.cache
+E:\repo\dynamicCrawler\CrawlerLibrary\bin\Debug\CrawlerLibrary.dll
+E:\repo\dynamicCrawler\CrawlerLibrary\bin\Debug\CrawlerLibrary.pdb
+E:\repo\dynamicCrawler\CrawlerLibrary\bin\Debug\HtmlAgilityPack.dll
+E:\repo\dynamicCrawler\CrawlerLibrary\bin\Debug\Newtonsoft.Json.dll
+E:\repo\dynamicCrawler\CrawlerLibrary\bin\Debug\HtmlAgilityPack.pdb
+E:\repo\dynamicCrawler\CrawlerLibrary\bin\Debug\HtmlAgilityPack.xml
+E:\repo\dynamicCrawler\CrawlerLibrary\bin\Debug\Newtonsoft.Json.xml
+E:\repo\dynamicCrawler\CrawlerLibrary\obj\Debug\CrawlerLibrary.csprojResolveAssemblyReference.cache
+E:\repo\dynamicCrawler\CrawlerLibrary\obj\Debug\CrawlerLibrary.dll
+E:\repo\dynamicCrawler\CrawlerLibrary\obj\Debug\CrawlerLibrary.pdb

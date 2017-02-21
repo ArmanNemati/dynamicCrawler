@@ -13,7 +13,10 @@ namespace CrawlerLibrary.Helper
             {
                 var request = WebRequest.Create(url);
                 var response = (HttpWebResponse)request.GetResponse();
-                using (var sr = new StreamReader(response.GetResponseStream()))
+                var stream = response.GetResponseStream();
+                if (stream == null)
+                    return null;
+                using (var sr = new StreamReader(stream))
                 {
                     return sr.ReadToEnd();
                 }
@@ -31,7 +34,10 @@ namespace CrawlerLibrary.Helper
                 var request = WebRequest.Create(url);
                 request.ContentType = "application/json; charset=utf-8";
                 var response = (HttpWebResponse)request.GetResponse();
-                using (var sr = new StreamReader(response.GetResponseStream()))
+                var stream = response.GetResponseStream();
+                if (stream == null)
+                    return null;
+                using (var sr = new StreamReader(stream))
                 {
                     string text = sr.ReadToEnd();
                     return JObject.Parse(text);
