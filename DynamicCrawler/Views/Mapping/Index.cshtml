@@ -1,49 +1,35 @@
-﻿@using Kendo.Mvc.UI.Fluent
+﻿@using DynamicCrawler.Models
 @model IEnumerable<DynamicCrawler.Models.Mapping>
-<br/>
+<br />
 <p>
     @Html.Kendo().Button().Name("btnCreate").Content("Create New").HtmlAttributes(new { type = "button" }).Events(e => e.Click("btnCreateOnClick"))
 </p>
-<table class="table" id="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Comments)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Key)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstSelector)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SecondSelector)
-        </th>
-        <th>Operations</th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comments)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Key)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstSelector)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SecondSelector)
-            </td>
-            <td>
-                @Html.Kendo().Button().Name("btnEdit"+ item.Id).Content("Edit").HtmlAttributes(new { type = "button", param = item.Id }).Events(e => e.Click("btnEditOnClick")).Deferred()
-                @Html.Kendo().Button().Name("btnDetails" + item.Id).Content("Details").HtmlAttributes(new { type = "button", param = item.Id }).Events(e => e.Click("btnDetailsOnClick")).Deferred()
-                @Html.Kendo().Button().Name("btnDelete" + item.Id).Content("Delete").HtmlAttributes(new { type = "button", param = item.Id }).Events(e => e.Click("btnDeleteOnClick")).Deferred()
-            </td>
-        </tr>
-    }
-</table>
+@(Html.Kendo().Grid<Mapping>()
+              .Name("newsGrid")
+              .Columns(column =>
+              {
+                  column.Bound(c => c.Comments);
+                  column.Bound(c => c.Key);
+                  column.Bound(c => c.FirstSelector);
+                  column.Bound(c => c.SecondSelector);
+                  column.Bound(c => c.Id).Title("").ClientTemplate(@"<button type='button' name='btnEdit#=Id#' class='k-button' onclick='btnEditOnClick(#=Id#)'>Edit</button>
+                                                            <button type='button' name='btnDetails#=Id#' class='k-button' onclick='btnDetailsOnClick(#=Id#)'>Details</button>
+                                                            <button type='button' name='btnDelete#=Id#' class='k-button' onclick='btnDeleteOnClick(#=Id#)'>Delete</button>");
+              }).DataSource(datasource => datasource
+                  .Ajax()
+                  .Model(model => model.Id(m => m.Id))
+                  .PageSize(20)
+                  .Read(read => read.Action("GetAll", "Mapping")).Events(x => x.Error("onFetchDataError")))
+              .Pageable(pageable => pageable.PageSizes(new int[] { 5, 10, 20, 50 })
+                  .Refresh(true)
+                  .PreviousNext(true)
+                  .Enabled(true))
+              .Editable(e => e.Enabled(false))
+              .Sortable()
+              .Events(evn => evn.DataBound("onGridDataBound"))
+              .Resizable(resize => resize.Columns(true))
+              .NoRecords("No records found")
+)
 <div id="createWindow">
     @Html.Action("Create")
 </div>
@@ -52,46 +38,35 @@
 <div id="windowDelete"></div>
 <script>
     $(document).ready(function () {
-        @Html.Kendo().DeferredScripts(false);
-
-        $("#table").kendoGrid({
-            height: 520,
-            sortable: true,
-            pageable: {
-                refresh: true,
-                pageSizes: true,
-                buttonCount: 6
-            },
-            dataSource: {
-                pageSize: 12
-            }
-        });
-
-        var createWindow = $("#createWindow"); 
+        //showLoader();
+        var createWindow = $("#createWindow");
         createWindow.kendoWindow({
             width: "600px",
             title: "New Mapping",
             visible: false,
             actions: [
-                //"Pin",
                 "Minimize",
                 "Maximize",
                 "Close"
             ]
             //close: onClose
         }).data("kendoWindow").center();
-
-        //$("#btnCreate").kendoButton({
-        //    click: btnCreate_onClick
-        //});  
     });
 
+    function onGridDataBound() {
+        //hideLoader();
+    }
+
+    function onFetchDataError() {
+        //hideLoader();
+        alert('some error occurred');
+    }
+
     function btnCreateOnClick() {
-        var modal = $("#createWindow").data("kendoWindow"); 
+        var modal = $("#createWindow").data("kendoWindow");
         modal.open();
     }
-    function btnEditOnClick() {
-        var mappingCode=this.element.attr("param");
+    function btnEditOnClick(mappingCode) {
         var editWindow = $("#windowEdit");
         editWindow.kendoWindow({
             width: "600px",
@@ -104,16 +79,15 @@
                 "Close"
             ],
             content: "/Mapping/Edit/" + mappingCode,
-            close: onClose
+            //close: onClose
         }).data("kendoWindow").center().open();
     }
 
-    function btnDetailsOnClick() {
-        var mappingCode = this.element.attr("param");
+    function btnDetailsOnClick(mappingCode) {
         var editWindow = $("#windowDetails");
         editWindow.kendoWindow({
             width: "1200",
-            height: "760px",
+            height: "805px",
             title: "Mapping Details",
             visible: false,
             actions: [
@@ -123,12 +97,11 @@
                 "Close"
             ],
             content: "/Mapping/Details/" + mappingCode,
-            close: onClose
+            //close: onClose
         }).data("kendoWindow").center().open();
     }
 
-    function btnDeleteOnClick() {
-        var mappingCode = this.element.attr("param");
+    function btnDeleteOnClick(mappingCode) {
         var editWindow = $("#windowDelete");
         editWindow.kendoWindow({
             width: "600px",
@@ -141,13 +114,13 @@
                 "Close"
             ],
             content: "/Mapping/Delete/" + mappingCode,
-            close: onClose
+            //close: onClose
         }).data("kendoWindow").center().open();
     }
 
-    function onClose() {
-        $("#window").innerHTML = "";
-    }
+    //function onClose() {
+        //$("#window").innerHTML = "";
+    //}
 </script>
 
 

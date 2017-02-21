@@ -9,8 +9,14 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/kendo")
+    <link href="~/Content/myStyles.css" rel="stylesheet" />
+    <link href="~/Content/kendo/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/kendo.default.min.css" rel="stylesheet" />
+    <script src="~/Scripts/kendo/kendo.web.min.js"></script>
+    <script src="~/Scripts/kendo/aspmvc/kendo.aspnetmvc.min.js"></script>
 </head>
 <body>
+    <div class="loader" hidden=""></div>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -26,8 +32,6 @@
                     <li>@Html.ActionLink("Crawl Transfer", "TransferCrawlRequest", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Crawl Match", "MatchCrawlRequest", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Mapping", "Index", "Mapping", new { area = "" }, null)</li>
-                    @*<li>@Html.ActionLink("Entity", "Index", "Entity", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Property", "Index", "Property", new { area = "" }, null)</li>*@
                 </ul>
             </div>
         </div>
@@ -36,12 +40,10 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Dynamic Crawling</p>
         </footer>
     </div>
-
-    @*@Scripts.Render("~/bundles/jquery")*@
+    <script src="~/Scripts/myScripts/share.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)    
+    @RenderSection("scripts", required: false)
 </body>
 </html>

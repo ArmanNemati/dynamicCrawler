@@ -2,6 +2,7 @@
 using DynamicCrawler.Models;
 using System.Linq;
 using System.Web.Mvc;
+using Kendo.Mvc.UI;
 
 namespace DynamicCrawler.Controllers
 {
@@ -14,12 +15,17 @@ namespace DynamicCrawler.Controllers
         }
         public ActionResult Index()
         {
-            return View(_db.Mappings.ToList());
+            return View();
         }
 
         public ActionResult GetAll()
         {
-            return Json(_db.Mappings.ToList(), JsonRequestBehavior.AllowGet);
+            var result = _db.Mappings.ToList();
+            return Json(new DataSourceResult()
+            {
+                Data = result,
+                Total = result.Count
+            });
         }
         public ActionResult Create()
         {

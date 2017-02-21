@@ -177,7 +177,6 @@
     <Compile Include="Controllers\PropertyController.cs" />
     <Compile Include="Controllers\MappingController.cs" />
     <Compile Include="Controllers\UrlController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +201,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\image\Bears.jpg" />
+    <Content Include="Content\image\loading.gif" />
+    <Content Include="Content\image\page-loader.gif" />
     <Content Include="Content\kendo\Black\editor.png" />
     <Content Include="Content\kendo\Black\imagebrowser.png" />
     <Content Include="Content\kendo\Black\indeterminate.gif" />
@@ -536,7 +537,7 @@
     <Content Include="Content\kendo\Uniform\sprite_2x.png" />
     <Content Include="Content\kendo\Uniform\sprite_kpi.png" />
     <Content Include="Content\kendo\Uniform\sprite_kpi_2x.png" />
-    <Content Include="favicon.ico" />
+    <Content Include="Content\myStyles.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
@@ -640,6 +641,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\kendo\angular.min.js" />
+    <Content Include="Scripts\kendo\aspmvc\kendo.aspnetmvc.min.js" />
     <Content Include="Scripts\kendo\cultures\kendo.culture.af-ZA.min.js" />
     <Content Include="Scripts\kendo\cultures\kendo.culture.af.min.js" />
     <Content Include="Scripts\kendo\cultures\kendo.culture.am-ET.min.js" />
@@ -1248,6 +1250,7 @@
     <Content Include="Scripts\kendo\messages\kendo.messages.zh-TW.min.js" />
     <Content Include="Scripts\kendo\pako_deflate.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\myScripts\share.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config">
@@ -1889,6 +1892,7 @@
     <Content Include="Views\Url\Delete.cshtml" />
     <Content Include="Views\Home\V3Request.cshtml" />
     <Content Include="Views\Crawler\Crawl.cshtml" />
+    <Content Include="Scripts\kendo\aspmvc\kendo.aspnetmvc.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

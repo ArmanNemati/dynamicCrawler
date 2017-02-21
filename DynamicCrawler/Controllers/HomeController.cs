@@ -22,7 +22,7 @@ namespace DynamicCrawler.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Mapping");
         }
 
 

@@ -1,5 +1,5 @@
-﻿@using CrawlerLibrary.Models
-@model DynamicCrawler.Models.Mapping
+﻿@using DynamicCrawler.Models
+@model Mapping
 @Html.Kendo().Button().Name("btnCreateUrl").Content("Add Url").HtmlAttributes(new { type = "button" }).Events(e => e.Click("btnCreateUrlOnClick")).Deferred()
 @Html.Kendo().Button().Name("btnCreateProperty").Content("Add Property").HtmlAttributes(new { type = "button" }).Events(e => e.Click("btnCreatePropertyOnClick")).Deferred()
 @Html.Kendo().Button().Name("btnTestCrawl").Content("Test").HtmlAttributes(new { type = "button" }).Events(e => e.Click("btnTestCrawlOnClick")).Deferred()
@@ -112,7 +112,7 @@
     <div id="gridTestCrawl"></div>
 </div>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function () {   
         @Html.Kendo().DeferredScripts(false);
 
         $("#Urlstable").kendoGrid({
@@ -150,7 +150,6 @@
             visible: false,
             content: "/Url/Create/"+@Model.Id.ToString(),
             actions: [
-                //"Pin",
                 "Minimize",
                 "Maximize",
                 "Close"
@@ -167,7 +166,6 @@
             title: "Edit Mapping",
             visible: false,
             actions: [
-                //"Pin",
                 "Minimize",
                 "Maximize",
                 "Close"
@@ -185,7 +183,6 @@
             title: "Delete Mapping",
             visible: false,
             actions: [
-                //"Pin",
                 "Minimize",
                 "Maximize",
                 "Close"
@@ -207,7 +204,6 @@
             visible: false,
             content: "/Property/Create?mappingCode="+@Model.Id.ToString(),
             actions: [
-                //"Pin",
                 "Minimize",
                 "Maximize",
                 "Close"
@@ -224,7 +220,6 @@
             title: "Delete Property",
             visible: false,
             actions: [
-                //"Pin",
                 "Minimize",
                 "Maximize",
                 "Close"
@@ -242,7 +237,6 @@
             title: "Delete Property",
             visible: false,
             actions: [
-                //"Pin",
                 "Minimize",
                 "Maximize",
                 "Close"
@@ -253,7 +247,20 @@
     }
 
     function btnTestCrawlOnClick() {
+        showLoader();
         var window = $("#testCrawlWindow");
+        window.kendoWindow({
+            width: "600px",
+            height: "760px",
+            title: "Crawl Result",
+            visible: false,
+            actions: [
+                "Minimize",
+                "Maximize",
+                "Close"
+            ],
+            close: onClose
+        }).data("kendoWindow").center().open();        
 
         //get grid
         var dataSource = new kendo.data.DataSource({
@@ -263,8 +270,14 @@
                     dataType: "json"
                 }
             },
-            pageSize: 5
+            pageSize: 12,
+            error: function (e) {
+                hideLoader();
+                alert('some error eccured');
+                $("#testCrawlWindow").data("kendoWindow").close();
+            }
         });
+
         $("#gridTestCrawl")
             .kendoGrid({
                 dataSource: dataSource,
@@ -273,25 +286,14 @@
                     {field: "Reference"},
                     {field: "Property.Name",title:"Property"},
                     {field: "Value"}
-                ]
+                ],
+                dataBound: function() {
+                    hideLoader(); 
+                }
             });
-
-        window.kendoWindow({
-            width: "600px",
-            title: "Crawl Result",
-            visible: false,
-            actions: [
-                //"Pin",
-                "Minimize",
-                "Maximize",
-                "Close"
-            ],
-            //content:  'arman',
-            close: onClose
-        }).data("kendoWindow").center().open();
     }
 
-    function reloadDetails() {debugger
+    function reloadDetails() {
         var mappingCode = @Model.Id;
         var editWindow = $("#windowDetails");
         editWindow.kendoWindow({
@@ -300,7 +302,6 @@
             title: "Mapping Details",
             visible: false,
             actions: [
-                //"Pin",
                 "Minimize",
                 "Maximize",
                 "Close"
