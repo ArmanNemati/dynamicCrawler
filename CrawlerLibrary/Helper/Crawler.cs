@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Threading;
 using CrawlerLibrary.Models;
 using HtmlAgilityPack;
 using Newtonsoft.Json.Linq;
@@ -15,7 +19,8 @@ namespace CrawlerLibrary.Helper
             foreach (string url in map.Urls)
             {
                 var jsonResult = RequestHelper.RequestWithJsonContentType(url);
-                records.AddRange(jsonResult != null ? GetReordsFromJson(jsonResult, map) : GetReordsFromHtml(url, map));
+                var lstResult = jsonResult != null ? GetReordsFromJson(jsonResult, map) : GetReordsFromHtml(url, map);
+                records.AddRange(lstResult ?? new List<RecordValueViewModel>());
             }
             return records;
         }
@@ -23,7 +28,7 @@ namespace CrawlerLibrary.Helper
         private static List<RecordValueViewModel> GetReordsFromJson(JObject jsonResult, MappingViewModel map)
         {
             List<RecordValueViewModel> records = new List<RecordValueViewModel>();
-            HtmlDocument doc = new HtmlDocument();
+            HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
             doc.LoadHtml(jsonResult.ToString());
             var container = doc.DocumentNode.SelectSingleNode(GetApproporiateStringForJson(map.FirstSelector));
             if (container == null)
@@ -61,10 +66,11 @@ namespace CrawlerLibrary.Helper
         private static List<RecordValueViewModel> GetReordsFromHtml(string url, MappingViewModel map)
         {
             List<RecordValueViewModel> records = new List<RecordValueViewModel>();
-            HtmlWeb web = new HtmlWeb();
-            var doc = web.Load(url);
+            //HtmlWeb web = new HtmlWeb();
+            //var doc = web.Load(url);
+            var doc = LoadHtmlWithAjaxContent(url); //it's useful when we have ajax content in page
             var container = doc.DocumentNode.SelectSingleNode(map.FirstSelector);
-            if(container==null)
+            if (container == null)
                 return null;
 
             string xpath = map.SecondSelector;
@@ -94,6 +100,31 @@ namespace CrawlerLibrary.Helper
 
             }
             return records;
+        }
+
+        static HtmlDocument LoadHtmlWithAjaxContent(string url)
+        {
+            HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create(url);
+            try
+            {
+                webReq.CookieContainer = new CookieContainer();
+                webReq.Method = "GET";
+                using (WebResponse response = webReq.GetResponse())
+                {
+                    using (Stream stream = response.GetResponseStream())
+                    {
+                        StreamReader reader = new StreamReader(stream);
+                        var res = reader.ReadToEnd();
+                        HtmlAgilityPack.HtmlDocument htmlDocument = new HtmlAgilityPack.HtmlDocument();
+                        htmlDocument.LoadHtml(res);
+                        return htmlDocument;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private static string GetApproporiateStringForJson(string input)
